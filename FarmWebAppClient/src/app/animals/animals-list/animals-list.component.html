@@ -1,3 +1,8 @@
+<div class="add-animal-container">
+  <input type="text" [(ngModel)]="newAnimalName" />
+  <button (click)="addAnimal()">Add animal</button>
+</div>
+
 <div class="animals-list-container">
   @for (animal of animals$ | async; track animal.name) {
   <div>
