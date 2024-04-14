@@ -1,1 +1,10 @@
-<p>Animals List works!</p>
+<div class="animals-list-container">
+  @for (animal of animals$ | async; track animal.name) {
+  <div>
+    <app-animal [animal]="animal" (delete)="deleteAnimal($event)" />
+    @if (!$last) {
+    <hr />
+    }
+  </div>
+  }
+</div>
