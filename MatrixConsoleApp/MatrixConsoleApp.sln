@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixConsoleApp", "MatrixConsoleApp\MatrixConsoleApp.csproj", "{58853F0A-3A34-41B2-89BB-17DABE5F9E65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58853F0A-3A34-41B2-89BB-17DABE5F9E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58853F0A-3A34-41B2-89BB-17DABE5F9E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58853F0A-3A34-41B2-89BB-17DABE5F9E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58853F0A-3A34-41B2-89BB-17DABE5F9E65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
