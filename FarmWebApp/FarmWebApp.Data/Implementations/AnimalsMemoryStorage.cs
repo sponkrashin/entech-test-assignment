@@ -1,6 +1,6 @@
-﻿namespace FarmWebAppData.Implementations;
+﻿namespace FarmWebApp.Data.Implementations;
 
-using FarmWebAppExceptions;
+using FarmWebApp.Exceptions;
 
 public class AnimalsMemoryStorage : IAnimalsStorage
 {

@@ -1,4 +1,4 @@
-﻿namespace FarmWebAppData;
+﻿namespace FarmWebApp.Data;
 
 public class Animal
 {

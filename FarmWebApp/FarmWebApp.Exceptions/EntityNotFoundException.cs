@@ -1,4 +1,4 @@
-﻿namespace FarmWebAppExceptions;
+﻿namespace FarmWebApp.Exceptions;
 
 public class EntityNotFoundException : Exception
 {
