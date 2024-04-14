@@ -30,6 +30,11 @@ public class AnimalsMemoryStorage : IAnimalsStorage
 
     public Task<Animal> Add(string name, CancellationToken cancellationToken)
     {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException("Animal name should not be empty");
+        }
+
         var animalExists = this.animalsList.Any(x => x.Name == name);
         if (animalExists)
         {
