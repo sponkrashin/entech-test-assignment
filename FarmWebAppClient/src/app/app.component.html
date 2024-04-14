@@ -1,0 +1,13 @@
+<header>
+  <h2>Farm Web App</h2>
+</header>
+
+<div>
+  <router-outlet />
+</div>
+
+@if (showNotification()) {
+<div class="notification">
+  {{ notification() }}
+</div>
+}

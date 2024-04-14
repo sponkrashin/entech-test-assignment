@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors();
 
 builder.Services.AddSingleton<IAnimalsStorage, AnimalsMemoryStorage>();
 
@@ -18,6 +19,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(options => options
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin());
 
 app.MapControllers();
 
