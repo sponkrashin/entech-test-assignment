@@ -35,7 +35,7 @@ public class AnimalsMemoryStorage : IAnimalsStorage
             throw new ArgumentException("Animal name should not be empty");
         }
 
-        var animalExists = this.animalsList.Any(x => x.Name == name);
+        var animalExists = this.animalsList.Any(x => string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase));
         if (animalExists)
         {
             throw new DuplicateEntityException($"Animal with name {name} already exists");
@@ -53,7 +53,7 @@ public class AnimalsMemoryStorage : IAnimalsStorage
 
     public Task Remove(string name, CancellationToken cancellationToken)
     {
-        if (this.animalsList.All(x => x.Name != name))
+        if (this.animalsList.All(x => !string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase)))
         {
             throw new EntityNotFoundException($"Animal with name {name} is not found");
         }
