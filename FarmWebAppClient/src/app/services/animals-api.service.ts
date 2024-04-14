@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { ENVIRONMENT_TOKEN, Environment } from 'environment';
+import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { CreateAnimalRequest, Animal } from 'models';
 import { Observable } from 'rxjs';
 
@@ -10,10 +10,7 @@ import { Observable } from 'rxjs';
 export class AnimalsApiService {
   private url!: string;
 
-  constructor(
-    private httpClient: HttpClient,
-    @Inject(ENVIRONMENT_TOKEN) environment: Environment
-  ) {
+  constructor(private httpClient: HttpClient) {
     this.url = `${environment.apiUrl}/animals`;
   }
 
