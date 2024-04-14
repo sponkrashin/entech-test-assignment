@@ -50,30 +50,18 @@ export class AnimalsListComponent {
       return;
     }
 
-    try {
-      await firstValueFrom(
-        this.animalsApi.create({ name: this.newAnimalName() })
-      );
+    await firstValueFrom(
+      this.animalsApi.create({ name: this.newAnimalName() })
+    );
 
-      this.newAnimalName.set('');
+    this.newAnimalName.set('');
 
-      this.reloadData();
-    } catch {
-      this.notificationsService.add(
-        'An error occurred during the API call. Please try again later.'
-      );
-    }
+    this.reloadData();
   }
 
   async deleteAnimal(animal: Animal): Promise<void> {
-    try {
-      await firstValueFrom(this.animalsApi.delete(animal.name));
-      this.reloadData();
-    } catch {
-      this.notificationsService.add(
-        'An error occurred during the API call. Please try again later.'
-      );
-    }
+    await firstValueFrom(this.animalsApi.delete(animal.name));
+    this.reloadData();
   }
 
   private reloadData(): void {
