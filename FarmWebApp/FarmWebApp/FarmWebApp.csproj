@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FarmWebAppData\FarmWebAppData.csproj" />
+    <ProjectReference Include="..\FarmWebApp.Data\FarmWebApp.Data.csproj" />
   </ItemGroup>
 
 </Project>
