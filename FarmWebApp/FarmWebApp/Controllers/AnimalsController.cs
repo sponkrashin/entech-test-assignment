@@ -19,6 +19,7 @@ public class AnimalsController : ControllerBase
 
     [HttpGet]
     [Route("")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
     {
         var animals = await this.animalsStorage.GetAll(cancellationToken);
@@ -28,6 +29,7 @@ public class AnimalsController : ControllerBase
 
     [HttpPost]
     [Route("")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     public async Task<IActionResult> Create([FromBody] AddAnimalRequest request, CancellationToken cancellationToken)
@@ -35,7 +37,7 @@ public class AnimalsController : ControllerBase
         try
         {
             await this.animalsStorage.Add(request.Name!, cancellationToken);
-            return this.Created();
+            return this.StatusCode(StatusCodes.Status201Created);
         }
         catch (ArgumentException ex)
         {
@@ -49,6 +51,7 @@ public class AnimalsController : ControllerBase
 
     [HttpDelete]
     [Route("{name}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string name, CancellationToken cancellationToken)
     {
